@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { Layout, Menu, Icon, Switch } from 'antd';
+import { Layout, Menu, Icon } from 'antd';
 
 const SubMenu = Menu.SubMenu;
 const { Sider } = Layout;
 
 
-export default class Nav extends React.Component {
+export default class Nav extends Component {
   state = {
     theme: 'dark',
     current: '1',
@@ -34,7 +34,6 @@ export default class Nav extends React.Component {
           style={{ height: '100%', borderRight: 0 }}
           defaultOpenKeys={['sub1']}
           selectedKeys={[this.state.current]}
-          mode="inline"
         >
           <SubMenu key="sub1" title={<span><Icon type="mail" /><span>Navigation One</span></span>}>
             <Menu.Item key="1">Option 1</Menu.Item>

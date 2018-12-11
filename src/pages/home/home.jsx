@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
 import { Layout } from 'antd';
 import Header from '../components/header/header';
 import Nav from '../components/sider/sider';
-import API from '@/api/api';
+// import API from '@/api/api';
 import './home.less';
 
 const {
