@@ -25,6 +25,7 @@ export default class Home extends Component {
               background: '#fff', padding: 24, margin: 0, minHeight: 280
             }}
             >
+              content
               {/* <Row>
                 <Col span={12}><Bar /></Col>
                 <Col span={12}><Pie /></Col>
