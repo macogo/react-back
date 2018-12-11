@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Route from './router/';
-import './index.css';
+import './theme/index.scss';
 import { AppContainer } from 'react-hot-loader';
 import { Provider } from 'react-redux';
 import store from '@/store/store.js'

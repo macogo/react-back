@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Layout, Row, Col } from 'antd';
+import { Layout } from 'antd';
 import Header from '../components/header/header';
 import Nav from '../components/sider/sider';
 // import Bar from '../components/charts/bar';
@@ -26,10 +26,6 @@ export default class Home extends Component {
             }}
             >
               content
-              {/* <Row>
-                <Col span={12}><Bar /></Col>
-                <Col span={12}><Pie /></Col>
-              </Row> */}
             </Content>
           </Layout>
         </Layout>
