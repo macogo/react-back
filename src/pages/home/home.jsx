@@ -11,21 +11,27 @@ const {
   Content,
 } = Layout;
 
-export default class Home extends Component {
 
-  componentDidMount() { }
+export default class Home extends Component {
+  // state = {
+  //   current: Bar
+  // }
+
   render() {
+    // const Compon = this.state.current;
     return (
       <Layout>
         <Header />
         <Layout>
-          <Nav />
+          <Nav pageId='/home' />
           <Layout style={{ padding: '20px' }}>
             <Content style={{
               background: '#fff', padding: 24, margin: 0, minHeight: 280
             }}
             >
               content
+              {/* Dynamic components */}
+              {/* {<Compon />} */}
             </Content>
           </Layout>
         </Layout>
