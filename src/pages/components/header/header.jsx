@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Menu, Icon } from 'antd';
+import { Menu} from 'antd';
 import './header.scss'
 export default class Header extends Component {
   state = {
@@ -13,8 +13,6 @@ export default class Header extends Component {
     });
   }
   render() {
-    const SubMenu = Menu.SubMenu;
-    const MenuItemGroup = Menu.ItemGroup;
     return (
       <div>
         <div className="logo" >$hang</div>
