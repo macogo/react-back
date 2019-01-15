@@ -15,7 +15,7 @@ export default class Nav extends Component {
           mode="inline"
           theme='dark'
           style={{ height: '100%', borderRight: 0 }}
-          defaultOpenKeys={['sub1']}
+          defaultOpenKeys={['home']}
           selectedKeys={[this.props.pageId.replace(/\//g, '')]}
         >
           <Menu.Item key="home">
