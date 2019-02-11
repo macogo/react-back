@@ -8,14 +8,19 @@ const { Sider } = Layout;
 
 export default class Nav extends Component {
 
+  handleClick = ({ item, key, selectedKeys }) => {
+
+  }
+
   render() {
     return (
       <Sider width={240} style={{ height: '100%' }}>
         <Menu
+          onClick={this.handleClick}
           mode="inline"
           theme='dark'
           style={{ height: '100%', borderRight: 0 }}
-          defaultOpenKeys={['home']}
+          defaultOpenKeys={[this.props.currentOpenKey]}
           selectedKeys={[this.props.pageId.replace(/\//g, '')]}
         >
           <Menu.Item key="home">

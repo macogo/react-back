@@ -23,7 +23,7 @@ export default class Home extends Component {
       <Layout>
         <Header />
         <Layout>
-          <Nav pageId='/home' />
+          <Nav pageId='/home' currentOpenKey="home" />
           <Layout style={{ padding: '20px' }}>
             <Content style={{
               background: '#fff', padding: 24, margin: 0, minHeight: 280
