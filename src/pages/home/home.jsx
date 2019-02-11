@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Layout } from 'antd';
 import Header from '../components/header/header';
 import Nav from '../components/sider/sider';
-// import Bar from '../components/charts/bar';
+import Bar from '../components/charts/bar';
 // import Pie from '../components/charts/pie';
 // import API from '@/api/api';
 import './home.scss';
@@ -13,12 +13,12 @@ const {
 
 
 export default class Home extends Component {
-  // state = {
-  //   current: Bar
-  // }
+  state = {
+    current: Bar
+  }
 
   render() {
-    // const Compon = this.state.current;
+    const Compon = this.state.current;
     return (
       <Layout>
         <Header />
@@ -31,7 +31,7 @@ export default class Home extends Component {
             >
               content
               {/* Dynamic components */}
-              {/* {<Compon />} */}
+              {<Compon />}
             </Content>
           </Layout>
         </Layout>

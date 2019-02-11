@@ -12,6 +12,7 @@ import './theme/index.scss';
 
 // routes
 const routes = [
+    ...require('@/pages/login/router').default,
     ...require('@/pages/home/router').default,
     ...require('@/pages/list/router').default
 ]
