@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Layout, Table } from 'antd';
 import Header from '../components/header/header';
 import Nav from '../components/sider/sider';
-// import API from '@/api/api';
+import API from '@/api/api';
 import './list.scss';
 
 const {
@@ -10,36 +10,31 @@ const {
 } = Layout;
 
 const columns = [{
-  title: 'Name',
-  dataIndex: 'name',
+  title: 'ORG',
+  dataIndex: 'pubOrg',
 }, {
-  title: 'Age',
-  dataIndex: 'age',
+  title: 'Publisher',
+  dataIndex: 'publisher',
 }, {
-  title: 'Address',
-  dataIndex: 'address',
+  title: 'Date',
+  dataIndex: 'pubDate',
 }];
-const data = [{
-  key: '1',
-  name: 'John Brown',
-  age: 32,
-  address: 'New York No. 1 Lake Park',
-}, {
-  key: '2',
-  name: 'Jim Green',
-  age: 42,
-  address: 'London No. 1 Lake Park',
-}, {
-  key: '3',
-  name: 'Joe Black',
-  age: 32,
-  address: 'Sidney No. 1 Lake Park',
-}];
+
 
 export default class List extends Component {
+  state = {
+    data: []
+  }
 
-  componentDidMount() {
-
+  async componentDidMount() {
+    try {
+      let result = await API.getTable();
+      this.setState({
+        data: result.rbBulletins,
+      });
+    } catch (err) {
+      console.error(err);
+    }
   }
   render() {
     return (
@@ -52,7 +47,7 @@ export default class List extends Component {
               background: '#fff', padding: 24, margin: 0, minHeight: 280
             }}
             >
-              <Table columns={columns} dataSource={data} size="middle" />
+              <Table rowKey={item => item.bulletinId} columns={columns} dataSource={this.state.data} size="middle" />
             </Content>
           </Layout>
         </Layout>
