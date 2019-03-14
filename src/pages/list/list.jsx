@@ -41,7 +41,7 @@ export default class List extends Component {
       <Layout>
         <Header />
         <Layout>
-          <Nav pageId={this.props.route.path} />
+          <Nav pageId={this.props.route.path} currentOpenKey="sub1"/>
           <Layout style={{ padding: '20px' }}>
             <Content style={{
               background: '#fff', padding: 24, margin: 0, minHeight: 280
@@ -56,5 +56,3 @@ export default class List extends Component {
     );
   }
 }
-
-
