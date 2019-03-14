@@ -13,7 +13,7 @@ export default class Server {
         timeout: 30000,
         params: null,
         data: null,
-        headers: null,
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded', 'Authorization': localStorage.getItem("token") },
         withCredentials: true, //是否携带cookies发起请求
         validateStatus: (status) => {
           return status >= 200 && status < 300;

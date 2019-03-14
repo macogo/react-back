@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Layout, Table } from 'antd';
 import Header from '../components/header/header';
 import Nav from '../components/sider/sider';
-// import API from '@/api/api';
+import API from '@/api/api';
 import './list.scss';
 
 const {
@@ -38,8 +38,18 @@ const data = [{
 
 export default class List extends Component {
 
-  componentDidMount() {
+  async componentDidMount() {
+    try {
+      let result = await API.getTable();
+      if (result.code === 1000) {
 
+      } else {
+
+      }
+
+    } catch (err) {
+      console.error(err);
+    }
   }
   render() {
     return (

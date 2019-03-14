@@ -1,9 +1,9 @@
 /* GLOBAL CONFIG */
 let baseURL;
 if (process.env.NODE_ENV === 'development') {
-  baseURL = '//*****.com';
+  baseURL = '//sheduomcbi.sunshinelunch.com';
 } else {
-  baseURL = '//*****.com';
+  baseURL = '//sheduomc.sunshinelunch.com';
 }
 
 export default { baseURL }

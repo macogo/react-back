@@ -31,7 +31,7 @@ export default class Home extends Component {
             >
               content
               {/* Dynamic components */}
-              {<Compon />}
+              {/* {<Compon />} */}
             </Content>
           </Layout>
         </Layout>

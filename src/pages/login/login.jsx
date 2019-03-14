@@ -1,15 +1,33 @@
 import React, { Component } from 'react';
 import {
-  Layout, Form, Icon, Input, Button, Checkbox,
+  Layout, Form, Icon, message, Input, Button, Checkbox,
 } from 'antd';
+import { connect } from 'react-redux';
+import sha1 from 'sha1';
+import API from '@/api/api';
+
 import './login.scss';
 
 export default class Login extends Component {
+
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.form.validateFields((err, values) => {
+    this.props.form.validateFields(async (err, values) => {
       if (!err) {
-        this.props.history.push('/');
+        const params = this.props.form.getFieldsValue();
+        params.password = sha1(params.password);
+        delete params.remember;
+        try {
+          let result = await API.loginByUser(params);
+          if (result.code === 1000) {
+            this.props.history.push('/');
+          } else {
+            message.error(result.msg);
+          }
+
+        } catch (err) {
+          console.error(err);
+        }
       }
     });
   }
@@ -23,10 +41,10 @@ export default class Login extends Component {
         <Form onSubmit={this.handleSubmit} className="login-form">
           <h1>$hang</h1>
           <Form.Item>
-            {getFieldDecorator('userName', {
+            {getFieldDecorator('username', {
               rules: [{ required: true, message: 'Please input your username!' }],
             })(
-              <Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="Username" />
+              <Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="username" />
             )}
           </Form.Item>
           <Form.Item>

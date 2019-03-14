@@ -40,24 +40,6 @@ export default class Nav extends Component {
               <Menu.Item key="8">Option 8</Menu.Item>
             </SubMenu>
           </SubMenu>
-          <SubMenu key="sub4" title={<span><Icon type="setting" /><span>Navigation Three</span></span>}>
-            <Menu.Item key="9">Option 9</Menu.Item>
-            <Menu.Item key="10">Option 10</Menu.Item>
-            <Menu.Item key="11">Option 11</Menu.Item>
-            <Menu.Item key="12">Option 12</Menu.Item>
-          </SubMenu>
-          <SubMenu key="sub5" title={<span><Icon type="cloud" /><span>Navigation Four</span></span>}>
-            <Menu.Item key="13">Option 13</Menu.Item>
-            <Menu.Item key="14">Option 14</Menu.Item>
-            <Menu.Item key="15">Option 15</Menu.Item>
-            <Menu.Item key="16">Option 16</Menu.Item>
-          </SubMenu>
-          <SubMenu key="sub6" title={<span><Icon type="team" /><span>Navigation Five</span></span>}>
-            <Menu.Item key="17">Option 17</Menu.Item>
-            <Menu.Item key="18">Option 18</Menu.Item>
-            <Menu.Item key="19">Option 19</Menu.Item>
-            <Menu.Item key="20">Option 20</Menu.Item>
-          </SubMenu>
         </Menu>
       </Sider>
     );
